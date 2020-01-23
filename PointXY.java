@@ -63,7 +63,10 @@ public class PointXY {
   }
 
   public void rotate(double theta) {
-
+    // x′=xcosθ−ysinθ
+    this.x = this.x * Math.cos(theta) - this.y * Math.sin(theta);
+    // y′ =y * cosθ + x * sinθ
+    this.y = this.y * Math.cos(theta) - this.x * Math.sin(theta);
   }
 
   public double distanceTo(PointXY p) {
