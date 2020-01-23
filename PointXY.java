@@ -6,6 +6,7 @@ public class PointXY {
 
   public boolean isCartesian;
 
+
   PointXY() {
     this.x = 0;
     this.y = 0;
@@ -17,11 +18,11 @@ public class PointXY {
   }
 
   PointXY(double x, double y, boolean isCartesian) {
-    if (isCartesian) {
-      this.x = x;
-      this.y = y;
+    this.x = x;
+    this.y = y;
 
-    } else { // polar coordinate system
+    if (!isCartesian) {
+      // polar coordinate system
       this.r = Math.sqrt(x * x + y * y);
       this.theta = calculateTheta(x, y);
 
@@ -89,11 +90,9 @@ public class PointXY {
     // If it's the same point
     if (this == p)
       return true;
-
     // The given Point is null
-    if (p == null) {
+    if (p == null)
       return false;
-    }
 
     return x == p.x && y == p.y;
   }
