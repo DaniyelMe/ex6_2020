@@ -54,7 +54,7 @@ public class PointXYZ extends PointXY {
     return Math.atan(getY() / getX());
   }
 
-  // An exmple for a non overide method
+  // An exmple for a non-overridden methods
   public void add(PointXYZ p) {
     this.setX(p.getX());
     this.setY(p.getY());
@@ -67,6 +67,7 @@ public class PointXYZ extends PointXY {
     if (this == obj)
       return true;
 
+    // if it's null OR not the same class OR the x's and y's aren't equal.
     if (obj == null || getClass() != obj.getClass() || !super.equals(obj))
       return false;
 

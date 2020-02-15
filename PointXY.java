@@ -89,7 +89,7 @@ public class PointXY {
     // If it's the same point
     if (this == p)
       return true;
-    // The given Point is null
+    // If the given Point is null
     if (p == null)
       return false;
 

@@ -1,24 +1,27 @@
 
 public class Test {
   public static void main(String[] args) {
-    // Create two 2D points
+    // 1.a Create two 2D points
     PointXY p1 = new PointXY(1.0, 2.0);
     PointXY p2 = new PointXY(3.0, 4.0);
-    // Print the two points via toString method
+    // 1.b Print the two points via toString method
     System.out.println(p1.toString());
     System.out.println(p2.toString());
-    // Print the distance between the two points
+
+    // 2 Print the distance between the two points
     System.out.println(p1.distanceTo(p2));
-    // Add first point with the second point
+
+    // 3.a Add first point with the second point
     p1.add(p2);
-    // Print the result
+    // 3.b Print the result
     System.out.println(p1.toString());
-    // Test if the two point are equal and print the result
+
+    // 4 Test if the two point are equal and print the result
     System.out.println(p1.equals(p2));
 
-    // Create 3D point
+    // 5.a Create 3D point
     PointXYZ p3 = new PointXYZ(3.0, 4.0, 2.0);
-    // Print the 3D point
+    // 5.b Print the 3D point via toString method
     System.out.println(p3.toString());
 
     /*
