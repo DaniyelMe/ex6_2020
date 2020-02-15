@@ -11,7 +11,9 @@ public class PointXYZ extends PointXY {
     this.z = z;
 
     if (!isCartesian) {
-      // polar coordinate system
+      // CartesianToPolar
+      // Spherical coordinate system
+      // https://wikimedia.org/api/rest_v1/media/math/render/svg/077ab5a9774e05d20497a377bd846f7da9ae95bb
       double r = getR();
       double theta = getTheta();
       double phi = getPhi();
@@ -52,6 +54,13 @@ public class PointXYZ extends PointXY {
     return Math.atan(getY() / getX());
   }
 
+  // An exmple for a non overide method
+  public void add(PointXYZ p) {
+    this.setX(p.getX());
+    this.setY(p.getY());
+    this.z += p.z;
+  }
+
   @Override
   public boolean equals(Object obj) {
     // If it's the same point
@@ -64,7 +73,6 @@ public class PointXYZ extends PointXY {
     PointXYZ pointXYZ = (PointXYZ) obj;
 
     return z == pointXYZ.z;
-
   }
 
   @Override

@@ -3,9 +3,7 @@ public class PointXY {
   private double y;
   private double r;
   private double theta;
-
   public boolean isCartesian;
-
 
   PointXY() {
     this.x = 0;
@@ -23,6 +21,7 @@ public class PointXY {
 
     if (!isCartesian) {
       // polar coordinate system
+      // https://wikimedia.org/api/rest_v1/media/math/render/svg/32c7f6c81b7b59f338ab20da873bdd8e714f347b
       this.r = Math.sqrt(x * x + y * y);
       this.theta = calculateTheta(x, y);
 
@@ -103,7 +102,7 @@ public class PointXY {
   }
 
   public double calculateTheta(Double x, Double y) {
-    final double theta = Math.PI / 2 + Math.atan2(y, x);
+    double theta = Math.PI / 2 + Math.atan2(y, x);
     return theta < 0 ? theta + 2 * Math.PI : theta;
   }
 
